@@ -1,0 +1,156 @@
+# ===========================================
+# Application Configuration
+# ===========================================
+spring:
+  application:
+    name: retail-management-api
+
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+
+# ===========================================
+# Server Configuration
+# ===========================================
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /api
+
+# ===========================================
+# Management/Actuator
+# ===========================================
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when_authorized
+
+# ===========================================
+# OpenAPI/Swagger
+# ===========================================
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+
+---
+# ===========================================
+# Local Profile
+# ===========================================
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  # Database
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/retail_management}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres123}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 300000
+      connection-timeout: 20000
+
+  # JPA
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+
+  # Flyway
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  # Redis
+  data:
+    redis:
+      url: ${REDIS_URL:redis://:redis_password_123@localhost:6379}
+      timeout: 2000ms
+
+# ===========================================
+# JWT Configuration
+# ===========================================
+app:
+  jwt:
+    secret: ${JWT_SECRET:mySecretKeyForJWTTokenGenerationMustBeAtLeast256BitsLongForHS256Algorithm}
+    access-token-expiration-ms: 900000       # 15 minutes
+    refresh-token-expiration-ms: 604800000   # 7 days
+
+  # CORS
+  cors:
+    allowed-origins: http://localhost:3000,http://localhost:3001
+    allowed-methods: GET,POST,PUT,DELETE,PATCH,OPTIONS
+    allowed-headers: "*"
+    allow-credentials: true
+
+# ===========================================
+# Logging
+# ===========================================
+logging:
+  level:
+    root: INFO
+    com.retailmanagement: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+---
+# ===========================================
+# Development Profile
+# ===========================================
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+
+  jpa:
+    show-sql: false
+
+logging:
+  level:
+    root: INFO
+    com.retailmanagement: DEBUG
+
+---
+# ===========================================
+# Production Profile
+# ===========================================
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    hikari:
+      maximum-pool-size: 20
+
+  jpa:
+    show-sql: false
+
+logging:
+  level:
+    root: WARN
+    com.retailmanagement: INFO

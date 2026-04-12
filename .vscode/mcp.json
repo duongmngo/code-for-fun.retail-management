@@ -1,0 +1,31 @@
+{
+	"servers": {
+		"microsoft/playwright-mcp": {
+			"type": "stdio",
+			"command": "/Users/duongngo/.nvm/versions/node/v24.11.1/bin/npx",
+			"args": [
+				"@playwright/mcp@latest"
+			],
+			"env": {
+				"PATH": "/Users/duongngo/.nvm/versions/node/v24.11.1/bin:/usr/local/bin:/usr/bin:/bin"
+			},
+			"gallery": "https://api.mcp.github.com",
+			"version": "0.0.1-seed"
+		},
+		"io.github.ChromeDevTools/chrome-devtools-mcp": {
+			"type": "stdio",
+			"command": "/Users/duongngo/.nvm/versions/node/v24.11.1/bin/npx",
+			"args": [
+				"--registry",
+				"https://registry.npmjs.org",
+				"chrome-devtools-mcp@0.21.0"
+			],
+			"env": {
+				"PATH": "/Users/duongngo/.nvm/versions/node/v24.11.1/bin:/usr/local/bin:/usr/bin:/bin"
+			},
+			"gallery": "https://api.mcp.github.com",
+			"version": "0.21.0"
+		}
+	},
+	"inputs": []
+}

@@ -1,0 +1,18 @@
+package com.retailmanagement.infrastructure.persistence.repository;
+
+import com.retailmanagement.infrastructure.persistence.entity.Tenant;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+import java.util.UUID;
+
+@Repository
+public interface TenantRepository extends JpaRepository<Tenant, UUID> {
+    
+    Optional<Tenant> findByCode(String code);
+    
+    boolean existsByCode(String code);
+    
+    boolean existsByEmail(String email);
+}

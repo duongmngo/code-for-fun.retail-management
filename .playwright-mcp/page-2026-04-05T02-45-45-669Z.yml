@@ -1,0 +1,81 @@
+- generic [ref=e1]:
+  - generic [ref=e173]:
+    - link "Retail Management" [ref=e175] [cursor=pointer]:
+      - /url: /
+      - img [ref=e176]
+      - generic [ref=e180]: Retail Management
+    - generic [ref=e181]:
+      - generic [ref=e182]:
+        - heading "Create an account" [level=3] [ref=e183]
+        - paragraph [ref=e184]: Register your organization and get started with Retail Management
+      - generic [ref=e185]:
+        - generic [ref=e186]:
+          - generic [ref=e187]:
+            - heading "Organization Details" [level=3] [ref=e188]
+            - generic [ref=e189]:
+              - generic [ref=e190]:
+                - text: Organization Code *
+                - textbox "Organization Code *" [active] [ref=e191]:
+                  - /placeholder: my-store
+                - paragraph [ref=e192]: Unique identifier (letters, numbers, hyphens)
+              - generic [ref=e193]:
+                - text: Business Name *
+                - textbox "Business Name *" [ref=e194]:
+                  - /placeholder: My Store LLC
+            - generic [ref=e195]:
+              - generic [ref=e196]:
+                - text: Business Phone
+                - textbox "Business Phone" [ref=e197]:
+                  - /placeholder: +1 (555) 123-4567
+              - generic [ref=e198]:
+                - text: Business Address
+                - textbox "Business Address" [ref=e199]:
+                  - /placeholder: 123 Main St, City
+          - generic [ref=e200]:
+            - heading "Admin Account" [level=3] [ref=e201]
+            - generic [ref=e202]:
+              - generic [ref=e203]:
+                - text: First Name *
+                - textbox "First Name *" [ref=e204]:
+                  - /placeholder: John
+              - generic [ref=e205]:
+                - text: Last Name *
+                - textbox "Last Name *" [ref=e206]:
+                  - /placeholder: Doe
+            - generic [ref=e207]:
+              - generic [ref=e208]:
+                - text: Email *
+                - textbox "Email *" [ref=e209]:
+                  - /placeholder: name@example.com
+              - generic [ref=e210]:
+                - text: Phone
+                - textbox "Phone" [ref=e211]:
+                  - /placeholder: +1 (555) 123-4567
+            - generic [ref=e212]:
+              - generic [ref=e213]:
+                - text: Password *
+                - textbox "Password *" [ref=e214]:
+                  - /placeholder: ••••••••
+              - generic [ref=e215]:
+                - text: Confirm Password *
+                - textbox "Confirm Password *" [ref=e216]:
+                  - /placeholder: ••••••••
+          - button "Create account" [ref=e217]
+        - generic [ref=e218]:
+          - generic [ref=e219]: Already have an account?
+          - link "Sign in" [ref=e220] [cursor=pointer]:
+            - /url: /login
+    - paragraph [ref=e221]:
+      - text: By creating an account, you agree to our
+      - link "Terms of Service" [ref=e222] [cursor=pointer]:
+        - /url: /terms
+      - text: and
+      - link "Privacy Policy" [ref=e223] [cursor=pointer]:
+        - /url: /privacy
+  - generic [ref=e72]:
+    - img [ref=e74]
+    - button "Open Tanstack query devtools" [ref=e122] [cursor=pointer]:
+      - img [ref=e123]
+  - button "Open Next.js Dev Tools" [ref=e68] [cursor=pointer]:
+    - img [ref=e69]
+  - alert [ref=e171]

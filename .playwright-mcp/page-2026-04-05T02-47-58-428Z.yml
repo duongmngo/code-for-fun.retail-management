@@ -1,0 +1,48 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e350]:
+    - link "Retail Management" [ref=e352] [cursor=pointer]:
+      - /url: /
+      - img [ref=e353]
+      - generic [ref=e357]: Retail Management
+    - generic [ref=e358]:
+      - generic [ref=e359]:
+        - heading "Sign in" [level=3] [ref=e360]
+        - paragraph [ref=e361]: Enter your credentials to access your account
+      - generic [ref=e362]:
+        - generic [ref=e363]:
+          - generic [ref=e364]:
+            - text: Organization Code
+            - textbox "Organization Code" [ref=e365]:
+              - /placeholder: your-org
+          - generic [ref=e366]:
+            - text: Email
+            - textbox "Email" [ref=e367]:
+              - /placeholder: name@example.com
+              - text: john.doe@demo.com
+          - generic [ref=e368]:
+            - generic [ref=e369]:
+              - generic [ref=e370]: Password
+              - link "Forgot password?" [ref=e371] [cursor=pointer]:
+                - /url: /forgot-password
+            - textbox "Password" [ref=e372]:
+              - /placeholder: ••••••••
+              - text: Demo@123456
+          - button "Sign in" [ref=e373]
+        - generic [ref=e374]:
+          - generic [ref=e375]: Don't have an account?
+          - link "Sign up" [ref=e376] [cursor=pointer]:
+            - /url: /register
+    - paragraph [ref=e377]:
+      - text: By signing in, you agree to our
+      - link "Terms of Service" [ref=e378] [cursor=pointer]:
+        - /url: /terms
+      - text: and
+      - link "Privacy Policy" [ref=e379] [cursor=pointer]:
+        - /url: /privacy
+  - generic [ref=e72]:
+    - img [ref=e74]
+    - button "Open Tanstack query devtools" [ref=e122] [cursor=pointer]:
+      - img [ref=e123]
+  - button "Open Next.js Dev Tools" [ref=e68] [cursor=pointer]:
+    - img [ref=e69]
+  - alert [ref=e171]

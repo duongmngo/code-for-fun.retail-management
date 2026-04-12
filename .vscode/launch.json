@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Debug Spring Boot",
+      "request": "launch",
+      "mainClass": "com.retailmanagement.RetailManagementApplication",
+      "projectName": "backend",
+      "cwd": "${workspaceFolder}/src/backend",
+      "envFile": "${workspaceFolder}/src/backend/.env"
+    },
+    {
+      "type": "java",
+      "name": "Attach to Spring Boot (5005)",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 5005
+    }
+  ]
+}

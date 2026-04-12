@@ -1,0 +1,37 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test results
+test-results/
+
+# Documentation (not needed in image)
+*.md
+docs/
+../../documents/technical/APPLICATION_YML_GUIDE.md
+../../documents/technical/CONFIGURATION_BINDING_GUIDE.md
+../../documents/technical/ENV_SETUP_GUIDE.md
+run-with-env.sh
+

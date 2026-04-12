@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Exclude generated code -->
+    <Match>
+        <Package name="~.*\.generated\..*"/>
+    </Match>
+    
+    <!-- Exclude DTO classes (they're just data carriers) -->
+    <Match>
+        <Class name="~.*\.(dto|request|response)\..*"/>
+        <Bug pattern="EI_EXPOSE_REP,EI_EXPOSE_REP2"/>
+    </Match>
+    
+    <!-- Exclude entity classes -->
+    <Match>
+        <Class name="~.*\.entity\..*"/>
+        <Bug pattern="EI_EXPOSE_REP,EI_EXPOSE_REP2"/>
+    </Match>
+    
+    <!-- Exclude configuration classes -->
+    <Match>
+        <Class name="~.*\.config\..*"/>
+        <Bug pattern="EI_EXPOSE_REP,EI_EXPOSE_REP2"/>
+    </Match>
+    
+    <!-- Lombok generates setters that trigger this -->
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP2"/>
+    </Match>
+    
+    <!-- Ignore unread fields in POJOs (Lombok handles them) -->
+    <Match>
+        <Class name="~.*\.(dto|entity|request|response)\..*"/>
+        <Bug pattern="URF_UNREAD_FIELD"/>
+    </Match>
+    
+    <!-- Ignore serialization issues for DTOs -->
+    <Match>
+        <Class name="~.*\.(dto|request|response)\..*"/>
+        <Bug pattern="SE_BAD_FIELD,SE_NO_SERIALVERSIONID"/>
+    </Match>
+    
+    <!-- Test classes exclusions -->
+    <Match>
+        <Class name="~.*Test"/>
+    </Match>
+    <Match>
+        <Class name="~.*Tests"/>
+    </Match>
+    <Match>
+        <Class name="~.*IT"/>
+    </Match>
+</FindBugsFilter>

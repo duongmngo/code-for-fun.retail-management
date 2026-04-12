@@ -1,0 +1,111 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e224]:
+    - complementary [ref=e225]:
+      - generic [ref=e226]:
+        - img [ref=e227]
+        - generic [ref=e231]: Retail Mgmt
+      - navigation [ref=e232]:
+        - list [ref=e233]:
+          - listitem [ref=e234]:
+            - link "Dashboard" [ref=e235] [cursor=pointer]:
+              - /url: /dashboard
+              - img [ref=e236]
+              - text: Dashboard
+          - listitem [ref=e238]:
+            - link "Products" [ref=e239] [cursor=pointer]:
+              - /url: /products
+              - img [ref=e240]
+              - text: Products
+          - listitem [ref=e244]:
+            - link "Sales" [ref=e245] [cursor=pointer]:
+              - /url: /sales
+              - img [ref=e246]
+              - text: Sales
+          - listitem [ref=e250]:
+            - link "Customers" [ref=e251] [cursor=pointer]:
+              - /url: /customers
+              - img [ref=e252]
+              - text: Customers
+          - listitem [ref=e257]:
+            - link "Settings" [ref=e258] [cursor=pointer]:
+              - /url: /settings
+              - img [ref=e259]
+              - text: Settings
+    - generic [ref=e262]:
+      - banner [ref=e263]:
+        - generic [ref=e264]:
+          - generic [ref=e265]: Welcome, John
+          - button "Logout" [ref=e266]:
+            - img
+            - text: Logout
+      - main [ref=e267]:
+        - generic [ref=e268]:
+          - heading "Dashboard" [level=1] [ref=e269]
+          - paragraph [ref=e270]: Welcome back! Here's an overview of your store.
+        - generic [ref=e271]:
+          - generic [ref=e272]:
+            - generic [ref=e273]:
+              - heading "Total Products" [level=3] [ref=e274]
+              - img [ref=e275]
+            - generic [ref=e279]:
+              - generic [ref=e280]: "0"
+              - link "View details →" [ref=e281] [cursor=pointer]:
+                - /url: /products
+          - generic [ref=e282]:
+            - generic [ref=e283]:
+              - heading "Today's Sales" [level=3] [ref=e284]
+              - img [ref=e285]
+            - generic [ref=e289]:
+              - generic [ref=e290]: $0.00
+              - link "View details →" [ref=e291] [cursor=pointer]:
+                - /url: /sales
+          - generic [ref=e292]:
+            - generic [ref=e293]:
+              - heading "Customers" [level=3] [ref=e294]
+              - img [ref=e295]
+            - generic [ref=e300]:
+              - generic [ref=e301]: "0"
+              - link "View details →" [ref=e302] [cursor=pointer]:
+                - /url: /customers
+          - generic [ref=e303]:
+            - generic [ref=e304]:
+              - heading "Low Stock Items" [level=3] [ref=e305]
+              - img [ref=e306]
+            - generic [ref=e308]:
+              - generic [ref=e309]: "0"
+              - link "View details →" [ref=e310] [cursor=pointer]:
+                - /url: /inventory/low-stock
+        - generic [ref=e311]:
+          - heading "Quick Actions" [level=2] [ref=e312]
+          - generic [ref=e313]:
+            - link "New Sale Start a new point of sale transaction" [ref=e314] [cursor=pointer]:
+              - /url: /sales/new
+              - generic [ref=e316]:
+                - img [ref=e317]
+                - heading "New Sale" [level=3] [ref=e321]
+                - paragraph [ref=e322]: Start a new point of sale transaction
+            - link "Add Product Add a new product to inventory" [ref=e323] [cursor=pointer]:
+              - /url: /products/new
+              - generic [ref=e325]:
+                - img [ref=e326]
+                - heading "Add Product" [level=3] [ref=e330]
+                - paragraph [ref=e331]: Add a new product to inventory
+            - link "Add Customer Register a new customer" [ref=e332] [cursor=pointer]:
+              - /url: /customers/new
+              - generic [ref=e334]:
+                - img [ref=e335]
+                - heading "Add Customer" [level=3] [ref=e340]
+                - paragraph [ref=e341]: Register a new customer
+            - link "View Reports Analyze sales and inventory data" [ref=e342] [cursor=pointer]:
+              - /url: /reports
+              - generic [ref=e344]:
+                - img [ref=e345]
+                - heading "View Reports" [level=3] [ref=e347]
+                - paragraph [ref=e348]: Analyze sales and inventory data
+  - generic [ref=e72]:
+    - img [ref=e74]
+    - button "Open Tanstack query devtools" [ref=e122] [cursor=pointer]:
+      - img [ref=e123]
+  - button "Open Next.js Dev Tools" [ref=e68] [cursor=pointer]:
+    - img [ref=e69]
+  - alert [ref=e171]
