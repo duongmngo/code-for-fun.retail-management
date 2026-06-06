@@ -124,8 +124,66 @@ def health_check():
 
 ---
 
-## Q2: (Add your next question here)
+## Q2: One Kafka topic is overloaded while others are idle. How would you rebalance the load?
 
 **Answer:**
+
+### 1. Understand the problem
+- Kafka topics are divided into partitions.
+- Producers publish messages to partitions.
+- Consumers read from partitions through consumer groups.
+- A hot topic usually means workload is unevenly distributed across partitions or consumers.
+
+### 2. Diagnose before changing anything
+- Check partition throughput and sizes.
+- Inspect consumer lag per partition.
+- Verify consumer group member count and assignments.
+- Review producer partitioning logic.
+- Check broker leader distribution and replica placement.
+
+### 3. Common causes
+- Uneven partition count: too few partitions for the volume.
+- Bad key-based partitioning: one key or small set of keys sends most traffic to one partition.
+- Some consumers are idle or slow.
+- Partition leadership or broker placement is skewed.
+
+### 4. Load rebalancing solutions
+A. Increase partitions
+- Add more partitions to the heavily used topic.
+- This allows more parallel consumer reads.
+- Note: existing records remain in old partitions; only new records are distributed differently.
+
+B. Improve partitioning key
+- Avoid low-cardinality or hot keys.
+- Use a better hash or a more random partitioning strategy when ordering is not required.
+- If the current key causes hot partitions, change the key or partitioner logic.
+
+C. Scale consumers
+- Add more consumer instances to the same consumer group.
+- Kafka will rebalance partitions across the available consumers.
+- Remember a consumer group can only consume as many partitions as the topic has.
+
+D. Reassign partitions across brokers
+- If one broker is overloaded, rebalance partition leaders and replicas.
+- This spreads CPU, network, and storage load across the cluster.
+
+E. Split or shard the topic
+- For extremely hot workloads, create multiple topics by tenant, region, or message type.
+- Route producers to the appropriate shard/topic to reduce single-topic pressure.
+
+F. Optimize processing
+- If consumers are the bottleneck, scale processing or improve consumer performance.
+- Use batching, faster consumers, or Kafka Streams/worker pools if needed.
+
+### 5. Monitoring and validation
+- After changes, verify partition lag and throughput distribution.
+- Check consumer utilization and broker load.
+- Useful tools: Confluent Control Center, Grafana with JMX metrics, Kafka Cruise Control.
+
+### 6. Important notes
+- Partition count cannot be decreased, only increased.
+- Changing partitioning does not rebalance existing data.
+- If ordering is required, be careful with partitioning changes.
+- Schedule reassignments during low traffic to avoid extra cluster load.
 
 ---
